@@ -13,11 +13,11 @@ sums_LA<-aggregate(NEI_vehicle_LA$Emissions,list(NEI_vehicle_LA$year),sum)
 par(mfrow=c(1,2))
 names(sums_Baltimore)<-c("year","emissions")
 names(sums_LA)<-c("year","emissions")
-png("plot6.png")
+
 plot(sums_Baltimore$year,sums_Baltimore$emissions,
                main="Baltimore",
                xlab="year",ylab="Emission(Tons)")
 plot(sums_LA$year,sums_LA$emissions,
                    main="LA",
                    xlab="year",ylab="Emission(Tons)")
-dev.off()
+dev.copy(png,file="plot6.png")
